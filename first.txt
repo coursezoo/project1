@@ -1,0 +1,36 @@
+Understanding the real scenario of abstract class
+In this example, Shape is the abstract class, its implementation is provided by the Rectangle and Circle classes. Mostly, we don't know about the implementation class (i.e. hidden to the end user) and object of the implementation class is provided by the factory method.
+A factory method is the method that returns the instance of the class. We will learn about the factory method later.
+In this example, if you create the instance of Rectangle class, draw() method of Rectangle class will be invoked.
+File: TestAbstraction1.java
+1.	abstract class Shape{  
+2.	abstract void draw();  
+3.	}  
+4.	//In real scenario, implementation is provided by others i.e. unknown by end user  
+5.	class Rectangle extends Shape{  
+6.	void draw(){System.out.println("drawing rectangle");}  
+7.	}  
+8.	class Circle1 extends Shape{  
+9.	void draw(){System.out.println("drawing circle");}  
+10.	}  
+11.	//In real scenario, method is called by programmer or user  
+12.	class TestAbstraction1{  
+13.	public static void main(String args[]){  
+14.	Shape s=new Circle1();//In real scenario, object is provided through method e.g. getShape() method  
+15.	s.draw();  
+16.	}  
+17.	}  
+Test it Now
+drawing circle
+________________________________________
+Another example of abstract class in java
+File: TestBank.java
+1.	abstract class Bank{    
+2.	abstract int getRateOfInterest();    
+3.	}    
+4.	class SBI extends Bank{    
+5.	int getRateOfInterest(){return 7;}    
+6.	}    
+7.	class PNB extends Bank{    
+int getRateOfInterest(){return 8;}    
+
